@@ -6,16 +6,13 @@
 # THIS CODE IS PARALLELIZED IN ORDER TO SPEED UP THE SIMULATION STUDY
 #############################################################################################################################
 
-#Sys.setenv(PATH=paste0("Y:/3.5/R-3.5.2/bin;Y:/3.5/Rtools/bin;", Sys.getenv("PATH")))
-#Sys.setenv(BINPREF="Y:/3.5/Rtools/mingw_$(WIN)/bin/" )
 # library(foreach)
 # library(doParallel) # alleen voor doParallel
 
 init <- Sys.time()
-path <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/R scripts/"
-pathdata <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/Test data/Corrected data/"
-pathresults <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/Simulation results/"
-setwd(path)
+path <- "PATH TO WORK DIRECTORY"
+pathdata <- "PATH TO FOLDER WITH DATA"
+pathresults <- "PATH TO FOLDER WITH RESULTS"setwd(path)
 
 ########################
 # LOOP OVER MISSING DATASETS
