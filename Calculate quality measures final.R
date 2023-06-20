@@ -7,9 +7,9 @@
 ################################
 # MAIN PATHS TO FOLDERS WITH DATASETS WITH RESULTS
 ################################
-path <- "Q:/Eigen projecten/Calibrated Imputation/Categorical data/R scripts/"
-pathdata <- "Q:/Eigen projecten/Calibrated Imputation/Categorical data/Test data/Corrected data/"
-pathresults <- "Q:/Eigen projecten/Calibrated Imputation/Categorical data/Simulation results/"
+path <- "PATH TO WORK DiRECTORY"
+pathdata <- "PATH TO FOLDER WITH DATA"
+pathresults <- "PATH TO FOLDER WITH RESULTS"
 setwd(path)
 
 ################################
