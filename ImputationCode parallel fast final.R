@@ -6,16 +6,12 @@
 # THIS CODE IS PARALLELIZED IN ORDER TO SPEED UP THE SIMULATION STUDY
 #############################################################################################################################
 
-# Onder RDS-Werk:
-Sys.setenv(PATH=paste0("Y:/3.5/R-3.5.2/bin;Y:/3.5/Rtools/bin;", Sys.getenv("PATH")))
-Sys.setenv(BINPREF="Y:/3.5/Rtools/mingw_$(WIN)/bin/" )
-
 library(foreach)
 library(doParallel)
 
 init <- Sys.time()
 
-path <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/R scripts/"
+path <- "PATH TO WORK DIRECTORY"
 setwd(path)
 
 myCluster <- makeCluster(detectCores() - 1, type="PSOCK")
@@ -36,9 +32,9 @@ foreach(s = (1:NumMissingSets)) %dopar% {
   library(nnet)
   library(foreign)
 
-  path <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/R scripts/"
-  pathdata <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/Test data/Corrected data/"
-  pathresults <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/Simulation results/"
+  path <- "PATH TO WORK DIRECTORY"
+  pathdata <- "PATH TO FOLDER WITH DATA"
+  pathresults <- "PATH TO FOLDER WITH RESULTS"
   
   logfilename <- paste0(path,"logfile.txt")
   cat(paste0(" Starting missing set ", s), file=logfilename, append = TRUE)
@@ -2145,9 +2141,9 @@ foreach(s = (1:NumMissingSets)) %dopar% {
 stopCluster(myCluster)
 
 ################################################
-path <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/R scripts/"
-pathdata <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/Test data/Corrected data/"
-pathresults <- "//CBSP.NL/Productie/Secundair/MPOnderzoek/Werk/Combineren/Medewerkers/TWAL/Eigen projecten/Calibrated Imputation/Categorical data/Simulation results/"
+path <- "PATH TO WORK DIRECTORY"
+pathdata <- "PATH TO FOLDER WITH DATA"
+pathresults <- "PATH TO FOLDER WITH RESULTS"
 
 #############################################################################################################################
 ## READING TRUE DATA FOR THE NON-PARALLEL PART OF THE CODE, NEEDED TO DETERMINE THE TRUE TOTALS
